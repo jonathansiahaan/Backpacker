@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backpacker Gateway</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+    <link href="/boostrap/butterfly/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/linecons.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/animate.css" rel="stylesheet" type="text/css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,900,700,700italic,400italic,300italic,300,100italic,100,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+        	$('.res-nav_click').click(function(){
+				$('ul.toggle').slideToggle(600)	
+			});	
+			
+			$(document).ready(function() {
+				$(window).bind('scroll', function() {
+         			if ($(window).scrollTop() > 0) {
+             			$('#header_outer').addClass('fixed');
+         			}
+         			else {
+             			$('#header_outer').removeClass('fixed');
+         			}
+    		});
+	  	});
+	  
+		});	
+		
+		function resizeText() {
+			var preferredWidth = 767;
+			var displayWidth = window.innerWidth;
+			var percentage = displayWidth / preferredWidth;
+			var fontsizetitle = 25;
+			var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
+			$(".divclass").css("font-size", newFontSizeTitle)
+		}
+	</script>
+  </head>
+  
+  
+  <body id="top_content" class="top_cont_outer">
+    
+  	<!--Top_content-->
+	<section id="top_content" class="top_cont_outer">
+	<div class="top_cont_inner">
+	    <div class="container">
+	      <div class="top_content">
+	        <div class="row">
+	          <div class="col-lg-5 col-sm-7">
+	            <div class="top_left_cont flipInY wow animated">
+	              <h3>Backpacker</h3>
+	              <h2>Share your trip &amp; get rest house from other backpackers</h2>
+	              <p> Our mobile application is on progress</p>
+	          </div>
+	        </div>
+			
+			<!-- Form Login -->
+		<div class="col-sm-6 col-lg-6" data-effect="slide-right">
+        <p class="lead text-muted"></p>
+        <form class="form-horizontal" action="/register_post" method="POST">
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                  <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <input type="submit" class="btn btn-default" value="Sign up">
+                </div>
+                <a href="/login">Login</a>
+            </div>
+        </form>          
+		</div>
+	      </div>
+
+	    </div>
+	    
+	</div>
+	  
+	</section>
+  	
+	
+  	
+    <!--
+    <form action="http://127.0.0.1:3000/process_post" method="POST">
+	First Name: <input type="text" name="first_name">  <br>
+	
+	Last Name: <input type="text" name="last_name">
+	<input type="submit" value="Submit">
+	</form>
+	-->
+  </body>
+</html>

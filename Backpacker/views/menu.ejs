@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backpacker Gateway</title>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+	<script src="/angular/controller/menuController.js"></script>
+	<script src="/angular/module.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	
+    <link href="/boostrap/butterfly/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/linecons.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="/boostrap/butterfly/css/animate.css" rel="stylesheet" type="text/css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,900,700,700italic,400italic,300italic,300,100italic,100,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
+  	
+  	<!--<link href="/boostrap/techie/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/boostrap/techie/css/bootstrap.techie.css" rel="stylesheet">-->
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript">
+            var loadMap = function() 
+            {
+                var myOptions = {
+                  center: new google.maps.LatLng(-27.43247,153.065654),
+                  zoom: 4,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"),
+                    myOptions);
+            };
+            window.onload= loadMap;
+        </script>
+  </head>
+  <body ng-app="myApp" ng-controller="MainCtrl">
+  	<div ng-include="'header.html'"></div>
+ 
+  	<h2>List of Trip</h2>
+      <div class="rowMenu">    
+        <div class="col-sm-6 col-lg-4">
+        	<h2>Trip in 12 December 2015</h2>
+        	
+            <a class="btn btn-primary" data-toggle="modal" ng-click="toggleModal()">Add New Trip</a><BR><BR>
+            
+            <modal title="New Trip" visible="showModal">
+            
+			    <form role="form">
+			      {{test}}
+			      <div class="form-group">
+			        <label for="tittle">Tittle</label>
+			        <input type="text" ng-model="formData.tittle" class="form-control" id="email" placeholder="Enter trip tittle" />
+			      </div>
+			      <div class="form-group">
+			        <label for="destination">Destination</label>
+			        <input type="text" ng-model="formData.destination" class="form-control" id="password" placeholder="Destination" />
+			      </div>
+			      <div class="form-group">
+			        <label for="description">Description</label>
+			        <input type="text" ng-model="formData.description" class="form-control" id="password" placeholder="Description" />
+			      </div>
+			      <div class="form-group">
+			      
+			      </div>
+			      
+			      <button type="submit" class="btn btn-default" ng-click="addTrip()">Submit</button>
+			    </form>
+		    </modal>
+		    <div id="map" style="width:530px;height:300px;">
+			    <div class="input-group">
+	              <span class="input-group-btn">
+	                <button class="btn btn-default" type="button">Search Trip!</button>
+	              </span>
+	              <input type="text" class="form-control">
+	            </div><!-- /input-group -->
+		    </div><BR>
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+		        <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic2.jpg" alt="">
+              	<span class="badge">100 Participant</span>Pergi ke Bali dengan Saya
+              </a>
+              <a href="#" class="list-group-item">
+		        <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic1.jpg" alt="">
+              	<span class="badge">21 Participant</span>
+              	Pergi ke Lombok
+              </a>
+              <a href="#" class="list-group-item">
+		        <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic1.jpg" alt="">
+              	<span class="badge">22 Participant</span>Lombok
+              </a>
+              <a href="#" class="list-group-item">
+		        <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic2.jpg" alt="">
+              	<span class="badge">51 Participant</span>Surabaya
+              </a>
+              <a href="#" class="list-group-item">
+                <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic1.jpg" alt="">
+              	<span class="badge">99 Participant</span>Festival medan
+              </a>
+              <a href="#" class="list-group-item">
+             	 <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic2.jpg" alt="">
+              	 <span class="badge">21 Participant</span>Pergi ke Lombok
+              </a>
+              <a href="#" class="list-group-item">
+              	 <img class="client_profile_pic" width="50" height="50" src="boostrap/butterfly/img/client-pic2.jpg" alt="">
+              	 <span class="badge">22 Participant</span>Lombok
+              </a>
+              <a href="#" class="list-group-item"><span class="badge">51 Participant</span>Surabaya</a>
+              <a href="#" class="list-group-item"><span class="badge">99 Participant</span>Festival medan</a>
+            </div>
+            
+        </div>
+      </div>
+  </body>
+</html>
